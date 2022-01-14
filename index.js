@@ -1,44 +1,16 @@
 const { request, response } = require('express')
 const express = require('express')
 const uuid = require('uuid')
+const cors = require('cors')
 
-const port = 3000
+
+const port = 3001
 
 
 const app = express()
 app.use(express.json())
-/* 
+app.use(cors())
 
-   - Query params  => meusite.com/users?nome=rodolfo&age=28 // FILTROS
-   - Route params  => /users/2      // BUSCAR, DELETAR OU ATUALIZAR ALGO ESPECÍFICO 
-   - Request body  => {"name" : "Rodolfo" , "age":}
-
-   - GET          => Buscar informações no back-end
-   - POST         => Criar informações no back-end
-   - PUT / PATCH  => Alterar/Atualizar informações no back-end
-   - DELETE       => Deletar informações no back-end
-
-
-   -find //filtrar informações do array e me retorna a informação
-   -findIndex / vai me retornar o local do meu array que esta minha informção, posição
-
-
-   - Middleware => INTERCEPTADOR => Tem o poder de parar ou alterar dados da requisição
-*/
-// const name = request.query.name
-// const age = request.query.age
-
-// console.log(name, age)
-// const { name, age } = request.query // tambem podemos fazer assim //Destructuring assignment
-// return response.json({ name, age })
-
-// app.get( '/users/:id' , (request, response)=> {
-
-//     const {id} = request.params // uma forma de fazer 
-//     console.log(id)
-//     return response.json({id})
-
-// })
 
 
 const users = []
